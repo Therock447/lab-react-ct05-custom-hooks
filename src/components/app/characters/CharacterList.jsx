@@ -16,7 +16,9 @@ export default function CharacterList() {
   return (
     <>
       List of Characters
-      <p data-testid="characters"><Character characters={characters} /></p>
+      <div data-testid="characters">
+        <Character characters={characters} />
+      </div>
     </>
   );
 }
