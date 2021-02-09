@@ -1,14 +1,27 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import CharacterList from './characters/CharacterList';
 
 export default function App() {
-
   return (
-    <>
-      <CharacterList />
-    </>
+    <Router>
+      <Switch>
+        <Route
+          exact path="/" component={CharacterList}
+        />
+      </Switch>
+    </Router>
   );
 }
+
+
+{/* <>
+<CharacterList />
+</> */}
 
 
 
