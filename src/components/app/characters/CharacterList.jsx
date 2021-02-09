@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Character from './Character';
 
 export default function CharacterList() {
+  const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
+  if(loading) return 'Loading';
+
   return (
-    <div>
+    <>
       List of Characters
-      <p><Character /></p>
-    </div>
+      <p data-testid="characters"><Character characters={characters} /></p>
+    </>
   );
 }
