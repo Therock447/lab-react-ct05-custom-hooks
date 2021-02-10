@@ -14,8 +14,6 @@ export default function CharacterList() {
       });
   }, []);
 
-  console.log(characters);
-
   if(loading) return 'Loading';
 
   const characterElements = characters.map(character => (

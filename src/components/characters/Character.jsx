@@ -18,4 +18,4 @@ Character.propTypes = {
   // id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   species: PropTypes.string.isRequired,
-}
+};
