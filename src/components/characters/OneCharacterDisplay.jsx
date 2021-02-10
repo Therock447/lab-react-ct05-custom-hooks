@@ -23,7 +23,6 @@ export default function OneCharacterDisplay({ match }) {
     <ul>
       <OneCharacter {...character} />
     </ul>
-    
   );
 }
 

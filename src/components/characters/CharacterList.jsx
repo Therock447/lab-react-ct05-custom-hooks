@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useCharacters } from '../../hooks/characters';
 import getCharacters from '../../services/getCharacters';
 import Character from './Character';
 
 export default function CharacterList() {
-  const [loading, setLoading] = useState(true);
-  const [characters, setCharacters] = useState([]);
+  const [ loading, characters ] = useCharacters();
 
-  useEffect(() => {
-    getCharacters()
-      .then(characters => {
-        setCharacters(characters);
-        setLoading(false);
-      });
-  }, []);
+  // const [loading, setLoading] = useState(true);
+  // const [characters, setCharacters] = useState([]);
+
+  // useEffect(() => {
+  //   getCharacters()
+  //     .then(characters => {
+  //       setCharacters(characters);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   if(loading) return 'Loading';
 
