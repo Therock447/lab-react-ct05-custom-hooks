@@ -4,7 +4,6 @@ import OneCharacter from './OneCharacter';
 import getOneCharacter from '../../services/getOneCharacter';
 
 export default function OneCharacterDisplay({ match }) {
-
   const [loading, setLoading] = useState(true);
   const [character, setCharacter] = useState([]);
     
@@ -21,9 +20,10 @@ export default function OneCharacterDisplay({ match }) {
   if(loading) return 'Loading';
   
   return (
-    <>
-      <OneCharacter character={character} />
-    </>
+    <ul>
+      <OneCharacter {...character} />
+    </ul>
+    
   );
 }
 
