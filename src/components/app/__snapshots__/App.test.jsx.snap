@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="Header"
+    >
+      <h1>
+        Welcome to the Lord of the Rings: Character List
+      </h1>
+      <p>
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </p>
+    </div>
+    <img
+      alt="Sauron hoola hooping with the one ring"
+      src="https://media.giphy.com/media/RSYuTFR42awXC/giphy.gif"
+    />
+  </div>
+</DocumentFragment>
+`;
