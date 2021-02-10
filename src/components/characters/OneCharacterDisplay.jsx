@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import OneCharacter from './OneCharacter';
 import getOneCharacter from '../../services/getOneCharacter';
 import { useOneCharacter } from '../../hooks/characters';
+import Loading from '../loading/Loading';
 
 export default function OneCharacterDisplay({ match }) {
   const { loading, character } = useOneCharacter(match.params.id);
   
   console.log(character);
   
-  if(loading) return 'Loading';
+  if(loading) return <Loading />;
   
   return (
     <ul>
