@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function OneCharacter({ name, species, birth, death, url }) {
-  
+
   return (
-    <div>
+    <>
       <p>
         Name: {name}
       </p>
@@ -19,7 +19,7 @@ export default function OneCharacter({ name, species, birth, death, url }) {
       <p>
         <a href={url} target="_blank" rel="noreferrer">Bio</a>
       </p>
-    </div>
+    </>
   );
 }
 

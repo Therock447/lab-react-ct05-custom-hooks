@@ -7,7 +7,7 @@ export const useCharacters = () => {
   const [characters, setCharacters] = useState([]);
   
   useEffect(() => {
-    getCharacters ()
+    getCharacters()
       .then(characters => {
         setCharacters(characters);
         setLoading(false);

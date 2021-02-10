@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import OneCharacterDisplay from './OneCharacterDisplay';
@@ -13,22 +13,30 @@ const server = setupServer(
 );
 
 describe('OneCharacterDisplay component', () => {
-  beforeAll(() => server.listen());
-  afterAll(() => server.close());
+  act(async() => {
+    await beforeAll(() => server.listen());
+    afterAll(() => server.close());
+  });
 
   it('fetches and displays details of one character', async() => {
-    render(<OneCharacterDisplay
-      match={{ params: { id: '5cd99d4bde30eff6ebccfbbe' } }}
-    />);
+    await act(async() => {
 
-    screen.getByAltText('Sauron hoola hooping with the one ring');
+      await render(<OneCharacterDisplay
+        match={{ params: { id: '5cd99d4bde30eff6ebccfbbe' } }}
+      />);
 
-    return waitFor(() => {
-      screen.findByText('Adanel');
-      screen.findByText('Human');
-      screen.findByText('No birth date available.');
-      screen.findByText('No death date available.');
-      screen.findByText('Bio');
+      screen.getByAltText('Sauron hoola hooping with the one ring');
+    });
+
+
+    return await act(async() => {
+      await waitFor(() => {
+        screen.findByText('Adanel');
+        screen.findByText('Human');
+        screen.findByText('No birth date available.');
+        screen.findByText('No death date available.');
+        screen.findByText('Bio');
+      });
     });
   });
 });

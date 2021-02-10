@@ -9,7 +9,7 @@ describe('Character component', () => {
       species="species"
     />);
 
-    screen.getByText('Character');
+    screen.getByTestId('character');
 
     const character = await screen.findByTestId('character');
 
