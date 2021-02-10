@@ -5,6 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 import CharacterList from '../characters/CharacterList';
+import OneCharacterDisplay from '../characters/OneCharacterDisplay';
 
 export default function App() {
   return (
@@ -12,6 +13,9 @@ export default function App() {
       <Switch>
         <Route
           exact path="/" component={CharacterList}
+        />
+        <Route
+          exact path="/character/:id" component={OneCharacterDisplay}
         />
       </Switch>
     </Router>
