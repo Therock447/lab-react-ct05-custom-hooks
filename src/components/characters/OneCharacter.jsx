@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import getOneCharacter from '../../services/getOneCharacter';
 
 export default function OneCharacter({ name, species, birth, death, url }) {
   
@@ -23,7 +22,6 @@ export default function OneCharacter({ name, species, birth, death, url }) {
     </div>
   );
 }
-
 
 OneCharacter.propTypes = {
   name: PropTypes.string.isRequired,
