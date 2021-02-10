@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCharacters } from '../../hooks/characters';
-import getCharacters from '../../services/getCharacters';
 import Character from './Character';
 
 export default function CharacterList() {
@@ -9,9 +9,14 @@ export default function CharacterList() {
   if(loading) return 'Loading';
 
   const characterElements = characters.map(character => (
-    <li key={character.id}>
-      <Character {...character} />
-    </li>
+    <Link
+      key={character.id}
+      to={`character/${character.id}`}
+    >
+      <li>
+        <Character {...character} />
+      </li>
+    </Link>
   ));
 
   return (
