@@ -10,7 +10,10 @@ const getOneCharacter = async(id) => {
     .then((character) => ({
       id: character.docs[0]._id,
       name: character.docs[0].name,
-      species: character.docs[0].race
+      species: character.docs[0].race,
+      birth: character.docs[0].birth,
+      death: character.docs[0].death,
+      url: character.docs[0].wikiUrl,
     }));
 };
 
