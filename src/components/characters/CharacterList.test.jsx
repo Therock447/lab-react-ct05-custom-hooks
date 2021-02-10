@@ -25,5 +25,9 @@ describe('CharacterList component', () => {
     screen.getByAltText('Sauron hoola hooping with the one ring');
 
     const listOfCharacters = await screen.findByTestId('characters');
+
+    return waitFor(() => {
+      expect(listOfCharacters).not.toBeEmptyDOMElement();
+    });
   });
 });
