@@ -4,18 +4,7 @@ import getCharacters from '../../services/getCharacters';
 import Character from './Character';
 
 export default function CharacterList() {
-  const [ loading, characters ] = useCharacters();
-
-  // const [loading, setLoading] = useState(true);
-  // const [characters, setCharacters] = useState([]);
-
-  // useEffect(() => {
-  //   getCharacters()
-  //     .then(characters => {
-  //       setCharacters(characters);
-  //       setLoading(false);
-  //     });
-  // }, []);
+  const { loading, characters } = useCharacters();
 
   if(loading) return 'Loading';
 

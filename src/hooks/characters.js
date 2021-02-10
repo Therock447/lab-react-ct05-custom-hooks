@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import getCharacters from '../services/getCharacters';
+import getOneCharacter from '../services/getOneCharacter';
 
 export const useCharacters = () => {
   const [loading, setLoading] = useState(true);
@@ -17,5 +18,22 @@ export const useCharacters = () => {
     loading,
     characters
   };
+};
 
+export const useOneCharacter = (id) => {
+  const [loading, setLoading] = useState(true);
+  const [character, setCharacter] = useState([]);
+      
+  useEffect(() => {
+    getOneCharacter(id)
+      .then(character => {
+        setCharacter(character);
+        setLoading(false);
+      });
+  }, [id]);
+
+  return {
+    loading,
+    character
+  };
 };
