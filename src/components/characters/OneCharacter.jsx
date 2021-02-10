@@ -6,14 +6,10 @@ export default function OneCharacter({ name, species }) {
   
   return (
     <div>
-      <p>
         This Character
-        {name}
-      </p>        
-      <p>
+      {name}
         Character Details
-        {species}
-      </p>        
+      {species}
     </div>
   );
 }

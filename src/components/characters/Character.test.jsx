@@ -4,7 +4,10 @@ import Character from './Character';
 
 describe('Character component', () => {
   it('displays a single character', async() => {
-    render(<Character />);
+    render(<Character
+      name="name"
+      species="species"
+    />);
 
     screen.getByText('Character');
 
