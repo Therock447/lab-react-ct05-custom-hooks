@@ -8,9 +8,7 @@ describe('OneCharacterDisplay component', () => {
       match={{ params: { id: '5cd99d4bde30eff6ebccfbbe' } }}
     />);
 
-    screen.getByText('Loading');
-
-    // const oneCharacter = await screen.findByTestId('one character');
+    screen.getByAltText('Sauron hoola hooping with the one ring');
 
     return waitFor(() => {
       screen.findByText('Adanel');

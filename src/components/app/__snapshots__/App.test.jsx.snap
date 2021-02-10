@@ -2,6 +2,17 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  Loading
+  <div>
+    Welcome to the Lord of the Rings: Character List
+    <a
+      href="/"
+    >
+      Home
+    </a>
+  </div>
+  <img
+    alt="Sauron hoola hooping with the one ring"
+    src="https://media.giphy.com/media/RSYuTFR42awXC/giphy.gif"
+  />
 </DocumentFragment>
 `;

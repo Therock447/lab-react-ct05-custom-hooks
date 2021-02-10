@@ -11,7 +11,7 @@ describe('CharacterList component', () => {
       </MemoryRouter>
     );
 
-    screen.getByText('Loading');
+    screen.getByAltText('Sauron hoola hooping with the one ring');
 
     const listOfCharacters = await screen.findByTestId('characters');
   });
