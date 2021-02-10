@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Character from './Character';
 
 describe('Character component', () => {
@@ -10,5 +10,11 @@ describe('Character component', () => {
     />);
 
     screen.getByText('Character');
+
+    const character = await screen.findByTestId('character');
+
+    return waitFor(() => {
+      expect(character).not.toBeEmptyDOMElement();
+    });
   });
 });
