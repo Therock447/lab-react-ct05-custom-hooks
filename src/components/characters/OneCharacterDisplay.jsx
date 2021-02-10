@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import OneCharacter from './OneCharacter';
 import { useOneCharacter } from '../../hooks/characters';
 import Loading from '../loading/Loading';
+import styles from './OneCharacterDisplay.css';
 
 export default function OneCharacterDisplay({ match }) {
   const { loading, character } = useOneCharacter(match.params.id);
@@ -10,9 +11,9 @@ export default function OneCharacterDisplay({ match }) {
   if(loading) return <Loading />;
   
   return (
-    <ul>
+    <div className={styles.OneCharacterDisplay}>
       <OneCharacter {...character} />
-    </ul>
+    </div>
   );
 }
 

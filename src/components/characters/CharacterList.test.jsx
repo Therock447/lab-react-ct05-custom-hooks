@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
@@ -13,21 +13,35 @@ const server = setupServer(
 );
 
 describe('CharacterList component', () => {
-  beforeAll(() => server.listen());
-  afterAll(() => server.close());
-  it('displays a list of characters', async() => {
-    render(
-      <MemoryRouter>
-        <CharacterList />
-      </MemoryRouter>
-    );
+  act(async() => {
+    await beforeAll(() => server.listen());
+    afterAll(() => server.close());
+  });
 
-    screen.getByAltText('Sauron hoola hooping with the one ring');
+  it('displays a list of characters', async() => {
+    await act(async() => {
+
+      await render(
+        <MemoryRouter>
+          <CharacterList />
+        </MemoryRouter>
+      );
+
+      screen.getByAltText('Sauron hoola hooping with the one ring');
+    });
 
     const listOfCharacters = await screen.findByTestId('characters');
 
-    return waitFor(() => {
-      expect(listOfCharacters).not.toBeEmptyDOMElement();
+    return await act(async() => {
+      await waitFor(() => {
+        expect(listOfCharacters).not.toBeEmptyDOMElement();
+      });
     });
   });
 });
+
+
+
+
+  
+
