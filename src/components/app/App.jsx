@@ -4,7 +4,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import CharacterList from './characters/CharacterList';
+import CharacterList from '../characters/CharacterList';
 
 export default function App() {
   return (
