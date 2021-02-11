@@ -8,32 +8,9 @@ import CharacterList from '../characters/CharacterList';
 import OneCharacterDisplay from '../characters/OneCharacterDisplay';
 import Header from '../header/Header';
 import Pagination from '../pagination/Pagination';
-import { ThemeProvider, useTheme } from '../theme/themeContext';
-// import styles from './App.css';
-
-
-// const toggle = ({ target }) => {
-//   if(target.checked) return selectTheme('light');
-//   else return selectTheme('dark');
-// };
-
-
-// const selectTheme = (currentTheme) => {
-//   if(currentTheme === 'light') return styles.light;
-//   else return styles.dark;
-// };
-
-// const currentTheme = selectTheme('dark');
-
+import { ThemeProvider } from '../theme/themeContext';
 
 export default function App() {
-  // const { theme, selectTheme } = useTheme();
-
-  // const currentTheme = selectTheme(theme);
-  // const currentTheme = theme;
-
-  // const currentTheme = styles.App;
-
   return (
     <div>
       <Router>
