@@ -4,6 +4,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import OneCharacterDisplay from './OneCharacterDisplay';
 import oneCharacterByIdResponse from '../../fixtures/oneCharacterById.json';
+import { ThemeProvider } from '../theme/themeContext';
 
 const server = setupServer(
   // eslint-disable-next-line max-len
@@ -21,13 +22,15 @@ describe('OneCharacterDisplay component', () => {
   it('fetches and displays details of one character', async() => {
     await act(async() => {
 
-      await render(<OneCharacterDisplay
-        match={{ params: { id: '5cd99d4bde30eff6ebccfbbe' } }}
-      />);
+      await render(
+        <ThemeProvider>
+          <OneCharacterDisplay
+            match={{ params: { id: '5cd99d4bde30eff6ebccfbbe' } }}
+          />
+        </ThemeProvider>);
 
       screen.getByAltText('Sauron hoola hooping with the one ring');
     });
-
 
     return await act(async() => {
       await waitFor(() => {
