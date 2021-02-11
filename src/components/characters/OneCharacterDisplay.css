@@ -1,5 +1,10 @@
 .OneCharacterDisplay {
-    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark, .light {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -7,4 +12,22 @@
     width: fit-content;
     margin: 10px;
     padding: 10px;
+}
+
+.dark {
+    background-color: blueviolet;
+    color: lightgray;
+
+    a {
+        color: burlywood;
+    }
+}
+
+.light {
+    background-color: plum;
+    color: midnightblue;
+
+    a {
+        color: darkblue;
+    }
 }

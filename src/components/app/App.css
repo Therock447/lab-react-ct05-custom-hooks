@@ -1,5 +1,15 @@
-html {
+html, body {
     background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+.dark {
+    background-color: black;
+}
+
+.light {
+    background-color: peachpuff;
 }
 
 .App {
@@ -8,12 +18,3 @@ html {
     align-items: center;
 }
 
-.light {
-    background-color: lightyellow;
-    color: brown;
-}
-
-.dark {
-    background-color: black;
-    color: silver;
-}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../theme/themeContext';
 import styles from './Header.css';
@@ -13,13 +13,15 @@ export default function Header() {
   };
 
   return (
-    <div
-      className={styles[theme]}
-    >
-      <h1>Welcome to the Lord of the Rings: Character List</h1>
-      Check box for Light Mode <input type="checkbox" onChange={toggle}/>
-      <p>
-        <Link to={'/'}>Home</Link>
+    <div className={styles.Header}>
+      <p
+        className={styles[theme]}
+      >
+        <h1>Welcome to the Lord of the Rings: Character List</h1>
+        Check box for Light Mode <input type="checkbox" onChange={toggle}/>
+        <p>
+          <Link to={'/'}>Home</Link>
+        </p>
       </p>
     </div>
   );

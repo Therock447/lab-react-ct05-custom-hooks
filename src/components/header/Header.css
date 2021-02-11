@@ -1,9 +1,9 @@
 .Header {
-    background-color: gray;
+    background-color: purple;
     text-align: center;
     border-radius: 10px;
     width: 80vw;
-    margin: 10px;
+    margin: auto;
     padding: 5px;
 
     p {
@@ -13,21 +13,23 @@
     }
 }
 
+.dark {
+    background-color: gray;
+    color: silver;
+    border-radius: 10px;
+
+    a {
+        color: gold;
+    }
+}
 
 .light {
     background-color: pink;
     color: brown;
+    border-radius: 10px;
     
     a {
         color: darkred;
     }
 }
 
-.dark {
-    background-color: purple;
-    color: silver;
-
-    a {
-        color: gold;
-    }
-}

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import styles from '../app/App.css';
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('dark');
