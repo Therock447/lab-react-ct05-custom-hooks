@@ -12,3 +12,22 @@
         font-weight: bold;
     }
 }
+
+
+.light {
+    background-color: pink;
+    color: brown;
+    
+    a {
+        color: darkred;
+    }
+}
+
+.dark {
+    background-color: purple;
+    color: silver;
+
+    a {
+        color: gold;
+    }
+}
