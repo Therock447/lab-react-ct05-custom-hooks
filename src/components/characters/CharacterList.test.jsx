@@ -5,6 +5,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import CharacterList from './CharacterList';
 import allCharacters from '../../fixtures/allCharacters.json';
+import ThemeContext, { ThemeProvider } from '../theme/themeContext';
 
 const server = setupServer(
   rest.get('https://the-one-api.dev/v2/character/', (req, res, ctx) => {
@@ -18,9 +19,11 @@ describe('CharacterList component', () => {
 
   it('displays a list of characters', () => {
     render(
-      <MemoryRouter>
-        <CharacterList />
-      </MemoryRouter>
+      <ThemeProvider>
+        <MemoryRouter>
+          <CharacterList />
+        </MemoryRouter>
+      </ThemeProvider>
     );
 
     screen.getByAltText('Sauron hoola hooping with the one ring');

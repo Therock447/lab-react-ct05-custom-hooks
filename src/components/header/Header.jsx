@@ -5,7 +5,7 @@ import styles from './Header.css';
 
 export default function Header() {
 
-  const { selectTheme } = useTheme();
+  const { theme, selectTheme } = useTheme();
 
   const toggle = ({ target }) => {
     if(target.checked) selectTheme('light');
@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div
-      // className={styles[theme]}
+      className={styles[theme]}
     >
       <h1>Welcome to the Lord of the Rings: Character List</h1>
       Check box for Light Mode <input type="checkbox" onChange={toggle}/>

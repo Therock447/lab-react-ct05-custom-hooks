@@ -7,7 +7,7 @@ import Character from './Character';
 import styles from './CharacterList.css';
 
 export default function CharacterList() {
-  // const { theme } = useTheme();
+  const { theme } = useTheme();
 
 
   const { loading, characters } = useCharacters();
@@ -19,9 +19,7 @@ export default function CharacterList() {
       key={character.id}
       to={`character/${character.id}`}
     >
-      <li
-        // className={styles[theme]}
-      >
+      <li className={styles[theme]}>
         <Character {...character} />
       </li>
     </Link>

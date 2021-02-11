@@ -6,7 +6,9 @@ exports[`App component renders App 1`] = `
     <div
       class="dark"
     >
-      <div>
+      <div
+        class="dark"
+      >
         <h1>
           Welcome to the Lord of the Rings: Character List
         </h1>
