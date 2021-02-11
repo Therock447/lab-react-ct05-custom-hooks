@@ -15,6 +15,3 @@ const getCharacters = async() => {
 };
 
 export default getCharacters;
-
-//KeAaf0aoqCAkb0pxEDt4
-//BWUBwlGUT1U_6ml5fhMS

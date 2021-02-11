@@ -7,8 +7,11 @@ exports[`App component renders App 1`] = `
       class="dark"
     >
       <div
-        class="dark"
+        class="Header"
       >
+        <p
+          class="dark"
+        />
         <h1>
           Welcome to the Lord of the Rings: Character List
         </h1>
@@ -23,6 +26,7 @@ exports[`App component renders App 1`] = `
             Home
           </a>
         </p>
+        <p />
       </div>
       <img
         alt="Sauron hoola hooping with the one ring"

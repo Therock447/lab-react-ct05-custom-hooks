@@ -9,7 +9,6 @@ import styles from './CharacterList.css';
 export default function CharacterList() {
   const { theme } = useTheme();
 
-
   const { loading, characters } = useCharacters();
 
   if(loading) return <Loading />;
